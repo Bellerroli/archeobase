@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="hu.belrol.archeobase.view.MeretAddView"
+          prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Text fx:id="meretText" text="Méret" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Text fx:id="meretTipusText" text="Méret típus" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Text fx:id="mertekegysegText" text="Mértékegység" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+        <Spinner fx:id="meretSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <ComboBox fx:id="meretTipusCB" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <RadioButton fx:id="cmRadio" GridPane.rowIndex="2" GridPane.columnIndex="1" text="cm"/>
+        <RadioButton fx:id="mRadio" GridPane.rowIndex="3" GridPane.columnIndex="1" text="m"/>
+        <Button fx:id="saveMeret" text="Mentés" GridPane.columnIndex="0" GridPane.rowIndex="4"
+                mnemonicParsing="false" onAction="#save"/>
+    </children>
+
+</GridPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="hu.belrol.archeobase.view.StratInsertView"
+          prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Text fx:id="SNRtext" text="SNR" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Text fx:id="OBNRtext" text="OBNR" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Text fx:id="tipusText" text="Típus" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Text fx:id="korText" text="Kor" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Text fx:id="korszakText" text="Korszak" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Text fx:id="allapotText" text="Állapot" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Text fx:id="meretText" text="Méret" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <Text fx:id="feltDatText" text="Felt. dat.?" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+        <Text fx:id="leirasText" text="Leírás" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+
+        <Spinner fx:id="SNRtextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Spinner fx:id="OBNRtextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <ComboBox fx:id="tipusCB" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="korCB" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <ComboBox fx:id="korszakCB" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="allapotCB" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+        <Text fx:id="meretErtek" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <Button fx:id="meretAdd" GridPane.rowIndex="7" GridPane.columnIndex="1"
+                mnemonicParsing="false" text="Méret hozzáadása" onAction="#openMeretAdd"/>
+        <Button fx:id="meretRefresh" GridPane.rowIndex="8" GridPane.columnIndex="1"
+                mnemonicParsing="false" text="Méret frissítés" onAction="#refreshMeretText"/>
+        <CheckBox fx:id="feltDatCheckbox" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+        <TextArea fx:id="leirasTA" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+        <Button fx:id="saveButton" GridPane.columnIndex="0" GridPane.rowIndex="12" onAction="#save">Mentés</Button>
+        <Button fx:id="clearButton" GridPane.columnIndex="1" GridPane.rowIndex="12">Törlés</Button>
+    </children>
+</GridPane>

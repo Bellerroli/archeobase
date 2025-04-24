@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="hu.belrol.archeobase.view.StratView"
+            prefHeight="600.0" prefWidth="1000.0">
+    <children>
+        <TableView fx:id="table" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="15">
+            <columns>
+                <TableColumn fx:id="SNRColumn" text="SNR" prefWidth="50"/>
+                <TableColumn fx:id="OBNRColumn" text="OBNR" prefWidth="50"/>
+                <TableColumn fx:id="tipusColumn" text="Típus" prefWidth="100"/>
+                <TableColumn fx:id="korColumn" text="Kor" prefWidth="150"/>
+                <TableColumn fx:id="korszakColumn" text="Korszak" prefWidth="150"/>
+                <TableColumn fx:id="allapotColumn" text="Állapot" prefWidth="100"/>
+                <TableColumn fx:id="meretColumn" text="Méret" prefWidth="150"/>
+                <TableColumn fx:id="feltDatColumn" text="Felt. dat." prefWidth="100"/>
+            </columns>
+        </TableView>
+        <Button AnchorPane.leftAnchor="25" AnchorPane.topAnchor="15" onAction="#openSNR">SNR módosítás</Button>
+        <Button AnchorPane.leftAnchor="150" AnchorPane.topAnchor="15" onAction="#openNewSNR">SNR létrehozás</Button>
+        <Button AnchorPane.leftAnchor="280"
+                AnchorPane.topAnchor="15"
+                onAction="#refreshTable">Táblázat frissítése
+        </Button>
+        <Text fx:id="fileAbsolutePath" AnchorPane.bottomAnchor="40" AnchorPane.leftAnchor="15"/>
+        <Button AnchorPane.leftAnchor="15"
+                AnchorPane.bottomAnchor="75"
+                onAction="#chooseFile">Fájl kiválasztása
+        </Button>
+        <Button AnchorPane.leftAnchor="15"
+                AnchorPane.bottomAnchor="15"
+                onAction="#loadExcel">Excel adatok betöltése
+        </Button>
+        <Button AnchorPane.leftAnchor="500"
+                AnchorPane.bottomAnchor="15"
+                onAction="#generateExcel">Excel generálás
+        </Button>
+    </children>
+
+
+</AnchorPane>

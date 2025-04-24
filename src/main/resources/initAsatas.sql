@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS ASATAS
+(
+    id         INTEGER PRIMARY KEY UNIQUE,
+    megnevezes TEXT NOT NULL
+);
