@@ -74,8 +74,7 @@ public class StratInsertView implements Initializable {
             korCB.setItems(FXCollections.observableArrayList(controller.findAllAttributes("kor")));
             korszakCB.setEditable(true);
             korszakCB.setItems(FXCollections.observableArrayList(controller.findAllAttributes("korszak")));
-            allapotCB.setEditable(true);
-            allapotCB.setItems(FXCollections.observableArrayList(controller.findAllAttributes("allapot")));
+            allapotCB.setItems(FXCollections.observableArrayList("feltárt", "részben feltárt", "feltáratlan"));
             SNRtextField.setEditable(true);
             SNRtextField.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000));
             OBNRtextField.setEditable(true);

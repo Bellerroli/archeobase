@@ -33,6 +33,5 @@
         <TextArea fx:id="leirasTA" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
 
         <Button fx:id="saveButton" GridPane.columnIndex="0" GridPane.rowIndex="12" onAction="#save">Mentés</Button>
-        <Button fx:id="clearButton" GridPane.columnIndex="1" GridPane.rowIndex="12">Törlés</Button>
     </children>
 </GridPane>

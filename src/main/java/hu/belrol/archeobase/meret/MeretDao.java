@@ -54,4 +54,12 @@ public class MeretDao {
         connection.close();
         return strings;
     }
+
+    public void deleteByStratId(final int stratId) throws SQLException {
+        Connection connection = DatabaseManager.getConnection();
+        PreparedStatement ps = connection.prepareStatement(MeretQuery.DELETE_BY_STARTID.getQuery());
+        ps.setInt(1, stratId);
+        ps.executeUpdate();
+        connection.close();
+    }
 }

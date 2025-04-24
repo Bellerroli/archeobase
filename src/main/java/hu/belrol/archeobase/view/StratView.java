@@ -129,6 +129,7 @@ public class StratView implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Válassz ki egy xlsx fájlt először!");
             alert.showAndWait();
+            return;
         }
 
         try (XSSFWorkbook workbook = new XSSFWorkbook(chosenExcel)) {

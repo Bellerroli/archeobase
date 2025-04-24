@@ -33,7 +33,7 @@ public class ExcelWriter {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet();
         int idx;
-        int width = 250;
+        int width = 4500;
 
         for (idx = 0; idx < 10; idx++) {
             sheet.setColumnWidth(idx, width);
@@ -74,7 +74,7 @@ public class ExcelWriter {
             Row row = sheet.createRow(rowIdx++);
             int cellIdx = 0;
             row.createCell(cellIdx++).setCellValue(strat.getSNR());
-            row.createCell(cellIdx++).setCellValue(strat.getOBNR());
+            row.createCell(cellIdx++).setCellValue((strat.getOBNR() == 0 ? "" : String.valueOf(strat.getOBNR())));
             row.createCell(cellIdx++).setCellValue(strat.getTipus());
             row.createCell(cellIdx++).setCellValue(strat.getAllapot());
             row.createCell(cellIdx++).setCellValue(strat.getKor());
