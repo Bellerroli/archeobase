@@ -27,4 +27,8 @@ public class MeretController {
     public List<String> findAttributes(String attribute) throws SQLException {
         return MeretDao.getInstance().findAttributeList(attribute);
     }
+
+    public void deleteAll(int stratId) throws SQLException {
+        MeretDao.getInstance().deleteByStratId(stratId);
+    }
 }

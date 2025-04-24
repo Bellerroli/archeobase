@@ -51,4 +51,8 @@ public class StratController {
                 })
                 .collect(Collectors.toList());
     }
+
+    public void delete(int id) throws SQLException {
+        StratDao.getInstance().delete(id);
+    }
 }

@@ -3,6 +3,7 @@ package hu.belrol.archeobase.view;
 import hu.belrol.archeobase.App;
 import hu.belrol.archeobase.asatas.Asatas;
 import hu.belrol.archeobase.base.ExcelWriter;
+import hu.belrol.archeobase.meret.MeretController;
 import hu.belrol.archeobase.strat.Strat;
 import hu.belrol.archeobase.strat.StratController;
 import hu.belrol.archeobase.strat.StratDao;
@@ -89,8 +90,6 @@ public class StratView implements Initializable {
 
     public void openSNR(ActionEvent event) throws IOException {
         StratDto strat = table.getSelectionModel().getSelectedItem();
-        FXMLLoader loader = App.getLoader("stratInsert");
-        Parent root = loader.load();
         if (strat == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Hiba");
@@ -99,6 +98,8 @@ public class StratView implements Initializable {
             alert.showAndWait();
             return;
         }
+        FXMLLoader loader = App.getLoader("stratInsert");
+        Parent root = loader.load();
         StratInsertView controller = loader.getController();
         controller.setUpdateable(strat);
         controller.setAsatas(chosenAsatas);
@@ -197,5 +198,21 @@ public class StratView implements Initializable {
 
     public void generateExcel(ActionEvent event) throws SQLException, IOException {
         ExcelWriter.getInstance().writeNewFile(StratController.getInstance().findByAsatasId(chosenAsatas.getId()));
+    }
+
+    public void deleteSNR(ActionEvent event) throws SQLException {
+        StratDto strat = table.getSelectionModel().getSelectedItem();
+        if (strat == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hiba");
+            alert.setHeaderText(null);
+            alert.setContentText("Válassz stratot!");
+            alert.showAndWait();
+            return;
+        }
+
+        MeretController.getInstance().deleteAll(strat.getId());
+        StratController.getInstance().delete(strat.getId());
+        refreshTable();
     }
 }

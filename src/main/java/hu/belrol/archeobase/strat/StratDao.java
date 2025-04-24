@@ -106,4 +106,12 @@ public class StratDao {
         connection.close();
         return strings;
     }
+
+    public void delete(int id) throws SQLException {
+        Connection connection = DatabaseManager.getConnection();
+        PreparedStatement ps = connection.prepareStatement(StratQuery.DELETE.getQuery());
+        ps.setInt(1, id);
+        ps.executeUpdate();
+        connection.close();
+    }
 }

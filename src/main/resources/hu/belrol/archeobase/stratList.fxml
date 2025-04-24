@@ -22,7 +22,11 @@
         </TableView>
         <Button AnchorPane.leftAnchor="25" AnchorPane.topAnchor="15" onAction="#openSNR">SNR módosítás</Button>
         <Button AnchorPane.leftAnchor="150" AnchorPane.topAnchor="15" onAction="#openNewSNR">SNR létrehozás</Button>
-        <Button AnchorPane.leftAnchor="280"
+        <Button AnchorPane.leftAnchor="260"
+                AnchorPane.topAnchor="15"
+                onAction="#deleteSNR">SNR törlése
+        </Button>
+        <Button AnchorPane.leftAnchor="360"
                 AnchorPane.topAnchor="15"
                 onAction="#refreshTable">Táblázat frissítése
         </Button>

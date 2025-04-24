@@ -17,6 +17,7 @@ public enum StratQuery {
             "korszak = ? " +
             "WHERE id = ?"),
     FIND_ALL_ATTRIBUTE("SELECT DISTINCT {col} FROM STRAT"),
+    DELETE("DELETE FROM STRAT WHERE id = ?"),
     ;
 
     private final String query;
