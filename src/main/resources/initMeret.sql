@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS MERET
 (
     id           INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
-    meret        DECIMAL,
+    meret        INTEGER,
     meret_tipus  TEXT,
     mertekegyseg TEXT,
     strat_id     INTEGER,

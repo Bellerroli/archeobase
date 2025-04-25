@@ -2,13 +2,12 @@ package hu.belrol.archeobase.meret;
 
 public class Meret {
     private int id;
-    private double meret;
+    private int meret;
     private String meretTipus;
     private Mertekegyseg mertekegyseg;
     private int stratId;
 
-
-    public Meret(int id, double meret, String meretTipus, Mertekegyseg mertekegyseg, int stratId) {
+    public Meret(int id, int meret, String meretTipus, Mertekegyseg mertekegyseg, int stratId) {
         this.id = id;
         this.meret = meret;
         this.meretTipus = meretTipus;
@@ -27,11 +26,11 @@ public class Meret {
         this.id = id;
     }
 
-    public double getMeret() {
+    public int getMeret() {
         return meret;
     }
 
-    public void setMeret(double meret) {
+    public void setMeret(int meret) {
         this.meret = meret;
     }
 

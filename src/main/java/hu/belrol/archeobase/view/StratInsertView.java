@@ -78,7 +78,7 @@ public class StratInsertView implements Initializable {
             SNRtextField.setEditable(true);
             SNRtextField.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000));
             OBNRtextField.setEditable(true);
-            OBNRtextField.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000));
+            OBNRtextField.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10000));
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

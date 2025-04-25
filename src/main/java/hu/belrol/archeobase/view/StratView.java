@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
@@ -86,9 +87,22 @@ public class StratView implements Initializable {
                     .collect(Collectors.joining("\n")));
         });
         feltDatColumn.setCellValueFactory(cellValue -> new ReadOnlyStringWrapper(cellValue.getValue().isFeltDat() ? "Igen" : "Nem"));
+        table.setRowFactory(tv -> {
+            TableRow<StratDto> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    try {
+                        openSNR();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+            return row;
+        });
     }
 
-    public void openSNR(ActionEvent event) throws IOException {
+    public void openSNR() throws IOException {
         StratDto strat = table.getSelectionModel().getSelectedItem();
         if (strat == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -169,6 +183,7 @@ public class StratView implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Sikeres betöltés!");
             alert.showAndWait();
+            refreshTable();
         } catch (IOException | InvalidFormatException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {

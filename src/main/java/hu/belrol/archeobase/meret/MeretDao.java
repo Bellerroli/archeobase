@@ -23,7 +23,7 @@ public class MeretDao {
         Connection connection = DatabaseManager.getConnection();
         PreparedStatement ps = connection.prepareStatement(MeretQuery.INSERT.getQuery(), Statement.RETURN_GENERATED_KEYS);
         int idx = 1;
-        ps.setDouble(idx++, meret.getMeret());
+        ps.setInt(idx++, meret.getMeret());
         ps.setString(idx++, meret.getMeretTipus());
         ps.setString(idx++, meret.getMertekegyseg().toString());
         ps.setInt(idx, meret.getStratId());

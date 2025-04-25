@@ -19,7 +19,7 @@ public class MeretAddView implements Initializable {
     public Text meretText;
     public Text meretTipusText;
     public Text mertekegysegText;
-    public Spinner<Double> meretSpinner;
+    public Spinner<Integer> meretSpinner;
     public ComboBox<String> meretTipusCB;
     public RadioButton cmRadio;
     public RadioButton mRadio;
@@ -39,7 +39,7 @@ public class MeretAddView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        meretSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(1, 1000));
+        meretSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 1000));
         meretSpinner.setEditable(true);
         meretTipusCB.setEditable(true);
         try {

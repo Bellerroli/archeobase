@@ -39,6 +39,22 @@ public class AsatasView implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        table.setRowFactory(tv -> {
+            TableRow<Asatas> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && !row.isEmpty()) {
+                    try {
+                        megnyit();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+            return row;
+        });
     }
 
     @FXML
@@ -60,7 +76,7 @@ public class AsatasView implements Initializable {
     }
 
     @FXML
-    public void megnyit(ActionEvent event) throws SQLException, IOException {
+    public void megnyit() throws SQLException, IOException {
         Asatas chosen = table.getSelectionModel().getSelectedItem();
         if (chosen == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
