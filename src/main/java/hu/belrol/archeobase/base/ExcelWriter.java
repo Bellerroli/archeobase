@@ -34,8 +34,12 @@ public class ExcelWriter {
         XSSFSheet sheet = workbook.createSheet();
         int idx;
         int width = 4500;
+        sheet.setColumnWidth(0, 2000);
+        sheet.setColumnWidth(1, 2000);
+        sheet.setColumnWidth(9, 3000);
 
-        for (idx = 0; idx < 10; idx++) {
+
+        for (idx = 2; idx < 9; idx++) {
             sheet.setColumnWidth(idx, width);
 
         }
