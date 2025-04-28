@@ -60,7 +60,7 @@ public class ExcelWriter {
     public void writeHeader(Sheet sheet) {
         int idx = 0;
         List<String> headers = List.of("SNR", "OBNR", "SNR típus", "SNR állapot", "SNR kor", "SNR korszak",
-                "SNR méret", "Feltételes dat."
+                "SNR méret", "Feltételes dat.", "Leírás"
         );
         Row row = sheet.createRow(0);
 
@@ -86,6 +86,7 @@ public class ExcelWriter {
             row.createCell(cellIdx++).setCellValue(MeretController.getInstance().getAll(strat.getId())
                     .stream().map(Meret::toString).collect(Collectors.joining("\n")));
             row.createCell(cellIdx).setCellValue(strat.isFeltDat() ? "Igen" : "Nem");
+            row.createCell(cellIdx).setCellValue(strat.getLeiras());
         }
 
     }
