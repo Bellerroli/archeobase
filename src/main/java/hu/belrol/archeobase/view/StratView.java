@@ -51,6 +51,7 @@ public class StratView implements Initializable {
     public TableColumn<StratDto, String> meretColumn;
     public TableColumn<StratDto, String> feltDatColumn;
     public Text fileAbsolutePath;
+    public TableColumn<StratDto, String> vanLeiras;
     private Asatas chosenAsatas;
     private FileChooser fileChooser = new FileChooser();
     private File chosenExcel;
@@ -87,6 +88,8 @@ public class StratView implements Initializable {
                     .collect(Collectors.joining("\n")));
         });
         feltDatColumn.setCellValueFactory(cellValue -> new ReadOnlyStringWrapper(cellValue.getValue().isFeltDat() ? "Igen" : "Nem"));
+        vanLeiras.setCellValueFactory(cellValue -> new ReadOnlyStringWrapper(cellValue.getValue().getLeiras() != null &&
+                !cellValue.getValue().getLeiras().isEmpty() ? "Igen" : "Nem"));
         table.setRowFactory(tv -> {
             TableRow<StratDto> row = new TableRow<>();
             row.setOnMouseClicked(event -> {

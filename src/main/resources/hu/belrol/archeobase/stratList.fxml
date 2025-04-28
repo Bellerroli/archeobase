@@ -18,6 +18,7 @@
                 <TableColumn fx:id="allapotColumn" text="Állapot" prefWidth="100"/>
                 <TableColumn fx:id="meretColumn" text="Méret" prefWidth="150"/>
                 <TableColumn fx:id="feltDatColumn" text="Felt. dat." prefWidth="100"/>
+                <TableColumn fx:id="vanLeiras" text="Van leírás" prefWidth="100"/>
             </columns>
         </TableView>
         <Button AnchorPane.leftAnchor="25" AnchorPane.topAnchor="15" onAction="#openSNR">SNR módosítás</Button>
