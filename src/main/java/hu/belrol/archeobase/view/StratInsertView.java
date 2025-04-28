@@ -92,7 +92,7 @@ public class StratInsertView implements Initializable {
         korCB.setValue(updateable.getKor());
         korszakCB.setValue(updateable.getKorszak());
         allapotCB.setValue(updateable.getAllapot());
-        leirasText.setText(updateable.getLeiras());
+        leirasTA.setText(updateable.getLeiras());
         feltDatCheckbox.setSelected(updateable.isFeltDat());
         meretErtek.setText(
                 meretHolder.stream()
@@ -152,7 +152,7 @@ public class StratInsertView implements Initializable {
         strat.setKor(korCB.getValue());
         strat.setKorszak(korszakCB.getValue());
         strat.setAllapot(allapotCB.getValue());
-        strat.setLeiras(leirasText.getText());
+        strat.setLeiras(leirasTA.getText());
         strat.setFeltDat(feltDatCheckbox.isSelected());
         strat.setAsatasId(asatas.getId());
         strat.setMeretList(meretHolder);

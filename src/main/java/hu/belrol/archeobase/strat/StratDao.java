@@ -61,6 +61,7 @@ public class StratDao {
         ps.setInt(idx++, strat.getOBNR());
         ps.setString(idx++, strat.getTipus());
         ps.setString(idx++, strat.getAllapot());
+        ps.setString(idx++, strat.getLeiras());
         ps.setInt(idx++, strat.isFeltDat() ? 1 : 0);
         ps.setString(idx++, strat.getKor());
         ps.setString(idx++, strat.getKorszak());
