@@ -85,7 +85,7 @@ public class ExcelWriter {
             row.createCell(cellIdx++).setCellValue(strat.getKorszak());
             row.createCell(cellIdx++).setCellValue(MeretController.getInstance().getAll(strat.getId())
                     .stream().map(Meret::toString).collect(Collectors.joining("\n")));
-            row.createCell(cellIdx).setCellValue(strat.isFeltDat() ? "Igen" : "Nem");
+            row.createCell(cellIdx++).setCellValue(strat.isFeltDat() ? "Igen" : "Nem");
             row.createCell(cellIdx).setCellValue(strat.getLeiras());
         }
 
