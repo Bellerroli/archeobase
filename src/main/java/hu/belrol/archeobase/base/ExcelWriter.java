@@ -83,8 +83,12 @@ public class ExcelWriter {
             row.createCell(cellIdx++).setCellValue(strat.getAllapot());
             row.createCell(cellIdx++).setCellValue(strat.getKor());
             row.createCell(cellIdx++).setCellValue(strat.getKorszak());
-            row.createCell(cellIdx++).setCellValue(MeretController.getInstance().getAll(strat.getId())
-                    .stream().map(Meret::toString).collect(Collectors.joining("\n")));
+
+            Cell meretCell = row.createCell(cellIdx++);
+            meretCell.setCellStyle(wrap(sheet.getWorkbook()));
+            meretCell.setCellValue(MeretController.getInstance().getAll(strat.getId())
+                    .stream().map(Meret::toString).collect(Collectors.joining(" \n")));
+
             row.createCell(cellIdx++).setCellValue(strat.isFeltDat() ? "Igen" : "Nem");
             row.createCell(cellIdx).setCellValue(strat.getLeiras());
         }
@@ -96,6 +100,12 @@ public class ExcelWriter {
         Font font = workbook.createFont();
         font.setBold(true);
         cellStyle.setFont(font);
+        return cellStyle;
+    }
+
+    private CellStyle wrap(Workbook workbook) {
+        CellStyle cellStyle = workbook.createCellStyle();
+        cellStyle.setWrapText(true);
         return cellStyle;
     }
 }
